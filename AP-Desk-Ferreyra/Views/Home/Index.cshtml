@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Above Premiere";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Bienvenido</h1>
+    <p>Convierte, recorta, saca capturas y edita audio de videos con esta poderosa aplicación.</p>
+    <form asp-controller="Home" asp-action="Validar">
+
+        <input type="text" placeholder="Código de producto" name="codigoIngresado" />
+        <input type="submit" value="Validar" />
+
+    </form>
+</div>
+
