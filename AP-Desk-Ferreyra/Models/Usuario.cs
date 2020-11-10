@@ -9,8 +9,8 @@ namespace AP_Desk_Ferreyra.Models
     {
 
         private int id;
-        private string usuario;
-        private string password;
+        public string usuario { get; set; }
+        public string password { get; set; }
 
         public Usuario(int id, string usuario, string password)
         {
@@ -19,14 +19,5 @@ namespace AP_Desk_Ferreyra.Models
             this.password = password;
         }
 
-        public string getUsuario()
-        {
-            return this.usuario;
-        }
-
-        public string getPassword()
-        {
-            return this.password;
-        }
     }
 }

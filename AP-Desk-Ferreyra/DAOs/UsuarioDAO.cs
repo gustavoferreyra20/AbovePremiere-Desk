@@ -18,10 +18,10 @@ namespace AP_Desk_Ferreyra.DAOs
             listaUsuarios.Add(new Usuario(3, "usuario3", "12345"));
         }
 
-        public static bool existeUsuario(String usuario, string password)
+        public static bool existeUsuario(string usuario, string password)
         {
 
-            var usuarioEncontrado = listaUsuarios.Find(usuarioObj => usuarioObj.getUsuario() == usuario && usuarioObj.getPassword() == password);
+            var usuarioEncontrado = listaUsuarios.Find(usuarioObj => usuarioObj.usuario == usuario && usuarioObj.password == password);
 
             return (usuarioEncontrado != null) ? true : false;
 
