@@ -6,10 +6,15 @@
     <h1 class="display-4">Bienvenido</h1>
     <p>Convierte, recorta y saca capturas con esta poderosa aplicación.</p>
     <p>Activa el producto para acceder a estas funciones y mucho mas!</p>
-    <form asp-controller="Home" asp-action="Validar">
+    <form asp-controller="Home" asp-action="Validar" method="post">
 
-        <input type="text" placeholder="Código de producto" name="codigoIngresado" />
-        <input type="submit" value="Validar" required/>
+        <input type="text" placeholder="Código de producto" name="clave" required />
+        <input type="submit" value="Validar" />
+
+        @if (ViewBag.msg != null)
+        {
+            <p><b>@ViewBag.msg</b></p>
+        }
 
     </form>
 </div>

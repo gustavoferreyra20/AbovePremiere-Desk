@@ -8,24 +8,31 @@ namespace AP_Desk_Ferreyra.DAOs
 {
     public class UsuarioDAO
     {
+        public static UsuarioDAO instancia = null;
+        public static List<Usuario> usuarios = new List<Usuario>();
 
-        public static List<Usuario> listaUsuarios = new List<Usuario>();
-
-        public static void iniciar()
+        public static UsuarioDAO getInstancia()
         {
-            listaUsuarios.Add(new Usuario(1, "usuario1", "12345"));
-            listaUsuarios.Add(new Usuario(2, "usuario2", "12345"));
-            listaUsuarios.Add(new Usuario(3, "usuario3", "12345"));
+
+            if (instancia == null)
+            {
+                instancia = new UsuarioDAO();
+            }
+
+            return instancia;
+
         }
 
-        public static bool existeUsuario(string usuario, string password)
+        public UsuarioDAO add(Usuario user)
         {
+            usuarios.Add(user);
+            return this;
 
-            var usuarioEncontrado = listaUsuarios.Find(usuarioObj => usuarioObj.usuario == usuario && usuarioObj.password == password);
+        }
 
-            return (usuarioEncontrado != null) ? true : false;
-
-          
+        public Usuario buscarUsuario(string username, string password)
+        {
+            return usuarios.Find(x => x.username == username && x.password == password);
         }
 
     }

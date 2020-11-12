@@ -9,13 +9,12 @@ namespace AP_Desk_Ferreyra.Models
     {
 
         private int id;
-        public string usuario { get; set; }
+        public string username { get; set; }
         public string password { get; set; }
 
-        public Usuario(int id, string usuario, string password)
+        public Usuario(string username, string password)
         {
-            this.id = id;
-            this.usuario = usuario;
+            this.username = username;
             this.password = password;
         }
 
