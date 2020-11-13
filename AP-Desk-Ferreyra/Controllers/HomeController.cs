@@ -58,49 +58,6 @@ namespace AP_Desk_Ferreyra.Controllers
             return View();
         }
 
-        [HttpPost]
-        public IActionResult Login(string usuario, string password)
-        {
-
-            var usuarioEncontrado = UsuarioDAO.getInstancia().buscarUsuario(usuario, password);
-
-            if (usuarioEncontrado != null)
-            {
-
-                HttpContext.Session.SetString("usuario", JsonConvert.SerializeObject(usuarioEncontrado));
-
-                return Redirect("/Home/Programa");
-
-            }
-            else
-            {
-
-                ViewBag.msg = "El usuario no existe";
-                return View("Index");
-
-            }
-
-        }
-
-        [HttpPost]
-
-        public IActionResult Register(string usuario, string password)
-        {
-
-            UsuarioDAO.getInstancia().add(new Usuario(usuario, password));
-            ViewBag.msg = "El usuario fue creado correctamente";
-            return View("Index");
-
-        }
-
-        public IActionResult Logout()
-        {
-
-            HttpContext.Session.Clear();
-            return Redirect("/Home/Index");
-
-        }
-
         public IActionResult Programa()
         {
 
@@ -112,7 +69,7 @@ namespace AP_Desk_Ferreyra.Controllers
                 var usuario = JsonConvert.DeserializeObject<dynamic>(usuarioJson);
 
                 ViewBag.usuario = usuario;
-                return View("Programa");
+                return View();
 
             }
             else

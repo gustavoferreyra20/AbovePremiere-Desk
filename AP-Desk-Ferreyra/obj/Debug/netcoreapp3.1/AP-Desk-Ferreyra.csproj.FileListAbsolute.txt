@@ -9,7 +9,6 @@ C:\Users\ferre\Desktop\Davinci\Plataformas de desarrollo\AP-Desk-Ferreyra\AP-Des
 C:\Users\ferre\Desktop\Davinci\Plataformas de desarrollo\AP-Desk-Ferreyra\AP-Desk-Ferreyra\bin\Debug\netcoreapp3.1\AP-Desk-Ferreyra.pdb
 C:\Users\ferre\Desktop\Davinci\Plataformas de desarrollo\AP-Desk-Ferreyra\AP-Desk-Ferreyra\bin\Debug\netcoreapp3.1\AP-Desk-Ferreyra.Views.dll
 C:\Users\ferre\Desktop\Davinci\Plataformas de desarrollo\AP-Desk-Ferreyra\AP-Desk-Ferreyra\bin\Debug\netcoreapp3.1\AP-Desk-Ferreyra.Views.pdb
-C:\Users\ferre\Desktop\Davinci\Plataformas de desarrollo\AP-Desk-Ferreyra\AP-Desk-Ferreyra\obj\Debug\netcoreapp3.1\AP-Desk-Ferreyra.csprojAssemblyReference.cache
 C:\Users\ferre\Desktop\Davinci\Plataformas de desarrollo\AP-Desk-Ferreyra\AP-Desk-Ferreyra\obj\Debug\netcoreapp3.1\AP-Desk-Ferreyra.AssemblyInfoInputs.cache
 C:\Users\ferre\Desktop\Davinci\Plataformas de desarrollo\AP-Desk-Ferreyra\AP-Desk-Ferreyra\obj\Debug\netcoreapp3.1\AP-Desk-Ferreyra.AssemblyInfo.cs
 C:\Users\ferre\Desktop\Davinci\Plataformas de desarrollo\AP-Desk-Ferreyra\AP-Desk-Ferreyra\obj\Debug\netcoreapp3.1\AP-Desk-Ferreyra.RazorAssemblyInfo.cache
@@ -107,6 +106,8 @@ C:\Users\ferre\Desktop\Davinci\Plataformas de desarrollo\AP-Desk-Ferreyra\AP-Des
 C:\Users\ferre\Desktop\Davinci\Plataformas de desarrollo\AP-Desk-Ferreyra\AP-Desk-Ferreyra\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\ferre\Desktop\Davinci\Plataformas de desarrollo\AP-Desk-Ferreyra\AP-Desk-Ferreyra\obj\Debug\netcoreapp3.1\AP-Desk-Ferreyra.csproj.CoreCompileInputs.cache
 C:\Users\ferre\Desktop\Davinci\Plataformas de desarrollo\AP-Desk-Ferreyra\AP-Desk-Ferreyra\obj\Debug\netcoreapp3.1\AP-Desk-Ferreyra.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\ferre\Desktop\Davinci\Plataformas de desarrollo\AP-Desk-Ferreyra\AP-Desk-Ferreyra\obj\Debug\netcoreapp3.1\Razor\Views\Home\IniciarSesion.cshtml.g.cs
-C:\Users\ferre\Desktop\Davinci\Plataformas de desarrollo\AP-Desk-Ferreyra\AP-Desk-Ferreyra\obj\Debug\netcoreapp3.1\Razor\Views\Home\Registrar.cshtml.g.cs
 C:\Users\ferre\Desktop\Davinci\Plataformas de desarrollo\AP-Desk-Ferreyra\AP-Desk-Ferreyra\obj\Debug\netcoreapp3.1\Razor\Views\Home\Programa.cshtml.g.cs
+C:\Users\ferre\Desktop\Davinci\Plataformas de desarrollo\AP-Desk-Ferreyra\AP-Desk-Ferreyra\obj\Debug\netcoreapp3.1\Razor\Views\Home\IniciarSesion.cshtml.g.cs
+C:\Users\ferre\Desktop\Davinci\Plataformas de desarrollo\AP-Desk-Ferreyra\AP-Desk-Ferreyra\obj\Debug\netcoreapp3.1\AP-Desk-Ferreyra.csprojAssemblyReference.cache
+C:\Users\ferre\Desktop\Davinci\Plataformas de desarrollo\AP-Desk-Ferreyra\AP-Desk-Ferreyra\obj\Debug\netcoreapp3.1\Razor\Views\Home\Registrar.cshtml.g.cs
+C:\Users\ferre\Desktop\Davinci\Plataformas de desarrollo\AP-Desk-Ferreyra\AP-Desk-Ferreyra\obj\Debug\netcoreapp3.1\Razor\Views\Home\Admin.cshtml.g.cs

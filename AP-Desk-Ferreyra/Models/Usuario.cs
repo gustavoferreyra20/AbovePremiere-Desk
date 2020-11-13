@@ -11,6 +11,7 @@ namespace AP_Desk_Ferreyra.Models
         private int id;
         public string username { get; set; }
         public string password { get; set; }
+        public string permisos { get; set; }
 
         public Usuario(string username, string password)
         {

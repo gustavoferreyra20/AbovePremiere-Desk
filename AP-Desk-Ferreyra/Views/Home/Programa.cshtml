@@ -5,6 +5,26 @@
 
 <div class="text-center">
     <h1 class="display-4">Programa</h1>
-    <button>Descargar ejecutable</button>
+    <button class="btn btn-primary mb-2">Descargar ejecutable</button>
 </div>
 
+
+@if (@ViewBag.usuario.permisos == null)
+{
+
+<div class="text-center form-group">
+    <h1 class="display-4">Crear keys</h1>
+    <form class="form-inline justify-content-center" asp-controller="Home" asp-action="GenerarKey" method="post">
+
+        <select class="form-control" id="cantidad">
+            <option>10</option>
+            <option>20</option>
+            <option>50</option>
+            <option>100</option>
+        </select>
+        
+        <button type="submit" class="btn btn-primary mb-2">Generar</button>
+    </form>
+</div>
+
+}

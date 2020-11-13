@@ -21,7 +21,7 @@
                         @{
 
 
-                            if (true)
+                            if (@ViewBag.usuario == null)
                             {
                                 <li class="nav-item">
                                     <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="IniciarSesion">Iniciar sesión</a>
@@ -30,11 +30,11 @@
                             else
                             {
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Nombre de usuario</a>
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">@ViewBag.usuario.username</a>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Logout">Salir</a>
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Logout">Salir</a>
                                 </li>
                             }
                         }

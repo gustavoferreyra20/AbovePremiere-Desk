@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "Iniciar Sesion";
 }
 
@@ -7,7 +6,7 @@
     <div class="col-12 col-lg-4">
         <div class="card p-3 bloque">
             <div class="card-body ">
-                <form asp-controller="Home" asp-action="Login" method="post">
+                <form asp-controller="User" asp-action="Login" method="post">
                     <h1 class="text-center pb-4" id="white">Iniciar sesión</h1>
 
                     <div class="form-group">
@@ -21,7 +20,14 @@
                         <input type="password" class="form-control" name="password" id="password"
                                placeholder="**********" value="" required>
                     </div>
+
                     <button type="submit" class="btn btn-block btn-primary">Iniciar sesión</button>
+
+                    @if (TempData["ResultMessage"] != null)
+                    {
+                            <p>@TempData["ResultMessage"]</p>
+                    }
+
                 </form>
             </div>
         </div>
