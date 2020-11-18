@@ -14,20 +14,20 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 #line 1 "C:\Users\ferre\Desktop\Davinci\Plataformas de desarrollo\AP-Desk-Ferreyra\AP-Desk-Ferreyra\Views\_ViewImports.cshtml"
-using AP_Desk_Ferreyra;
+using AP_Web_Ferreyra;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 2 "C:\Users\ferre\Desktop\Davinci\Plataformas de desarrollo\AP-Desk-Ferreyra\AP-Desk-Ferreyra\Views\_ViewImports.cshtml"
-using AP_Desk_Ferreyra.Models;
+using AP_Web_Ferreyra.Models;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"89383e37c565be5c995a2e046e3cf9c3a83ead1c", @"/Views/Home/Registrar.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"e475cad684661e8ef3ba193b472e38fd451b6e8b", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"52917c82f1dc7bfb902364a0757a4b014703f26f", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_Registrar : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-controller", "User", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -67,7 +67,7 @@ using AP_Desk_Ferreyra.Models;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n<div class=\"row justify-content-center\">\r\n    <div class=\"col-12 col-lg-4\">\r\n        <div class=\"card p-3 bloque\">\r\n            <div class=\"card-body \">\r\n                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "89383e37c565be5c995a2e046e3cf9c3a83ead1c4682", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "89383e37c565be5c995a2e046e3cf9c3a83ead1c4680", async() => {
                 WriteLiteral(@"
                     <h1 class=""text-center pb-4"" id=""white"">Registrar</h1>
 

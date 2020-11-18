@@ -5,12 +5,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using AP_Desk_Ferreyra.Models;
-using AP_Desk_Ferreyra.DAOs;
+using AP_Web_Ferreyra.Models;
+using AP_Web_Ferreyra.DAOs;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 
-namespace AP_Desk_Ferreyra.Controllers
+namespace AP_Web_Ferreyra.Controllers
 {
     public class HomeController : Controller
     {

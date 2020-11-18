@@ -14,20 +14,20 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 #line 1 "C:\Users\ferre\Desktop\Davinci\Plataformas de desarrollo\AP-Desk-Ferreyra\AP-Desk-Ferreyra\Views\_ViewImports.cshtml"
-using AP_Desk_Ferreyra;
+using AP_Web_Ferreyra;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 2 "C:\Users\ferre\Desktop\Davinci\Plataformas de desarrollo\AP-Desk-Ferreyra\AP-Desk-Ferreyra\Views\_ViewImports.cshtml"
-using AP_Desk_Ferreyra.Models;
+using AP_Web_Ferreyra.Models;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"a7d9de251d894b01b991e2388744fa958d86525f", @"/Views/Home/Admin.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"e475cad684661e8ef3ba193b472e38fd451b6e8b", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"52917c82f1dc7bfb902364a0757a4b014703f26f", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_Admin : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

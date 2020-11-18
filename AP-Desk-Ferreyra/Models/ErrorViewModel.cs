@@ -1,6 +1,6 @@
 using System;
 
-namespace AP_Desk_Ferreyra.Models
+namespace AP_Web_Ferreyra.Models
 {
     public class ErrorViewModel
     {

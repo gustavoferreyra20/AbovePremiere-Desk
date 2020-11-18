@@ -14,20 +14,20 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 #line 1 "C:\Users\ferre\Desktop\Davinci\Plataformas de desarrollo\AP-Desk-Ferreyra\AP-Desk-Ferreyra\Views\_ViewImports.cshtml"
-using AP_Desk_Ferreyra;
+using AP_Web_Ferreyra;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 2 "C:\Users\ferre\Desktop\Davinci\Plataformas de desarrollo\AP-Desk-Ferreyra\AP-Desk-Ferreyra\Views\_ViewImports.cshtml"
-using AP_Desk_Ferreyra.Models;
+using AP_Web_Ferreyra.Models;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"2b5f2d8c32173c236515586a45af59b007315af8", @"/Views/Home/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"e475cad684661e8ef3ba193b472e38fd451b6e8b", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"52917c82f1dc7bfb902364a0757a4b014703f26f", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("form-inline justify-content-center"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -68,7 +68,7 @@ using AP_Desk_Ferreyra.Models;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n<div class=\"text-center\">\r\n    <h1 class=\"display-4\">Bienvenido</h1>\r\n    <p>Convierte, recorta y saca capturas con esta poderosa aplicación.</p>\r\n    <p>Activa el producto para acceder a estas funciones y mucho mas!</p>\r\n \r\n    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2b5f2d8c32173c236515586a45af59b007315af85093", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2b5f2d8c32173c236515586a45af59b007315af85091", async() => {
                 WriteLiteral(@"
         <div class=""form-group mb-2"">
             <input type=""text"" class=""form-control-plaintext"" placeholder=""Código de producto"" name=""clave"" required />

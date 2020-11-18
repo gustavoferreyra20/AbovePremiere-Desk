@@ -9,7 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace AP_Desk_Ferreyra
+namespace AP_Web_Ferreyra
 {
     public class Startup
     {

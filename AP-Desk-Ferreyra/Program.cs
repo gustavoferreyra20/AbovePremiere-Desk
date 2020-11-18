@@ -2,20 +2,22 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using AP_Desk_Ferreyra.DAOs;
-using AP_Desk_Ferreyra.Models;
+using AP_Desk_Ferreyra;
+using AP_Web_Ferreyra.DAOs;
+using AP_Web_Ferreyra.Models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace AP_Desk_Ferreyra
+namespace AP_Web_Ferreyra
 {
     public class Program
     {
         public static void Main(string[] args)
         {
-            MiPropioMain();
+            var connString = "Server=localhost;Database=abovepremiere;Uid=root;Pwd=;";
+            DBConnection.getInstance().connect(connString);
 
             CreateHostBuilder(args).Build().Run();
         }
@@ -27,14 +29,5 @@ namespace AP_Desk_Ferreyra
                     webBuilder.UseStartup<Startup>();
                 });
 
-        public static void MiPropioMain()
-        {
-
-            UsuarioDAO.getInstancia()
-                .add(new Usuario("pepito", "123"))
-                .add(new Usuario("123", "123"))
-                .add(new Usuario("admin", "admin"));
-
-        }
     }
 }

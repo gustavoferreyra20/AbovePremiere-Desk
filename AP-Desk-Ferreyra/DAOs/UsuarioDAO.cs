@@ -1,10 +1,11 @@
-﻿using AP_Desk_Ferreyra.Models;
+﻿using AP_Desk_Ferreyra;
+using AP_Web_Ferreyra.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace AP_Desk_Ferreyra.DAOs
+namespace AP_Web_Ferreyra.DAOs
 {
     public class UsuarioDAO
     {
@@ -23,16 +24,35 @@ namespace AP_Desk_Ferreyra.DAOs
 
         }
 
-        public UsuarioDAO add(Usuario user)
+        public void add(Usuario user)
         {
-            usuarios.Add(user);
-            return this;
+            var queryBuilder = DBConnection.getInstance().getQueryBuilder();
+
+            queryBuilder.setQuery("INSERT INTO usuarios (user,pwd) VALUES (@username,@password)");
+            queryBuilder.addParam("@username", user.username);
+            queryBuilder.addParam("@password", user.password);
+
+            //this.personas.Add(persona)
+            DBConnection.getInstance().abm(queryBuilder);
 
         }
 
         public Usuario buscarUsuario(string username, string password)
         {
-            return usuarios.Find(x => x.username == username && x.password == password);
+            var queryBuilder = DBConnection.getInstance().getQueryBuilder();
+
+            queryBuilder.setQuery("SELECT * FROM usuarios WHERE user=@username AND pwd=@password");
+            queryBuilder.addParam("@username", username);
+            queryBuilder.addParam("@password", password);
+
+            var dataReader = DBConnection.getInstance().select(queryBuilder);
+            Usuario usuario = null;
+            while (dataReader.Read())
+            {
+                usuario = new Usuario(dataReader.GetString(1), dataReader.GetString(2));
+            }
+
+            return usuario;
         }
 
     }
