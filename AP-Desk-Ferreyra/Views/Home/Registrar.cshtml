@@ -21,6 +21,11 @@
                                placeholder="**********" value="" required>
                     </div>
                     <button type="submit" class="btn btn-block btn-primary">Registrar</button>
+
+                     @if (ViewBag.msg != null)
+                    {
+                        <p><b>@ViewBag.msg</b></p>
+                    }
                 </form>
             </div>
         </div>

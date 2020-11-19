@@ -31,8 +31,8 @@ namespace AP_Web_Ferreyra.Controllers
             else
             {
 
-                TempData["ResultMessage"] = "El usuario no existe";
-                return Redirect("/Home/iniciarSesion");
+                ViewBag.msg = "El usuario no existe";
+                return View("../Home/IniciarSesion");
 
             }
 
@@ -45,10 +45,10 @@ namespace AP_Web_Ferreyra.Controllers
         }
 
         [HttpPost]
-        public IActionResult Register(string usuario, string password)
+        public IActionResult Register(string usuario, string password, int pass)
         {
 
-            UsuarioDAO.getInstancia().add(new Usuario(usuario, password));
+            UsuarioDAO.getInstancia().add(new Usuario(usuario, password, pass));
 
             var usuarioJson = HttpContext.Session.GetString("usuario");
 

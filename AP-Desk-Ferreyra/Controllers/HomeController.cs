@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using AP_Web_Ferreyra.Models;
-using AP_Web_Ferreyra.DAOs;
+using AP_Desk_Ferreyra.DAOs;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 
@@ -40,17 +40,24 @@ namespace AP_Web_Ferreyra.Controllers
             return View();
         }
 
-        public IActionResult Validar(string clave)
+        [HttpPost]
+        public IActionResult Validar(string pass)
         {
-            if (clave == "2")
+            ViewResult vista;
+
+            var claveValida = PassDAO.getInstancia().validarPase(pass);
+
+            if (claveValida != -1)
             {
-                return Redirect("/Home/Registrar");
+                vista = View("Registrar");
             }
             else
             {
-                ViewBag.msg = "Clave incorrecta";
-                return View("Index");
+                ViewBag.pass = claveValida;
+                vista = View("Index");
             }
+  
+            return vista;
         }
 
         public IActionResult Registrar()

@@ -23,9 +23,9 @@
 
                     <button type="submit" class="btn btn-block btn-primary">Iniciar sesión</button>
 
-                    @if (TempData["ResultMessage"] != null)
+                    @if (ViewBag.msg != null)
                     {
-                            <p>@TempData["ResultMessage"]</p>
+                        <p><b>@ViewBag.msg</b></p>
                     }
 
                 </form>
