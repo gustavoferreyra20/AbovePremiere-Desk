@@ -6,7 +6,7 @@
     <div class="col-12 col-lg-4">
         <div class="card p-3 bloque">
             <div class="card-body ">
-                <form asp-controller="User" asp-action="Register" method="post">
+                <form asp-controller="User" asp-action="Registrar" method="post">
                     <h1 class="text-center pb-4" id="white">Registrar</h1>
 
                     <div class="form-group">
@@ -20,12 +20,10 @@
                         <input type="password" class="form-control" name="password" id="password"
                                placeholder="**********" value="" required>
                     </div>
+
+                    <input type="hidden" id="id_pass" name="id_pass" value=@TempData["id_pass"] runat="server" />
                     <button type="submit" class="btn btn-block btn-primary">Registrar</button>
 
-                     @if (ViewBag.msg != null)
-                    {
-                        <p><b>@ViewBag.msg</b></p>
-                    }
                 </form>
             </div>
         </div>

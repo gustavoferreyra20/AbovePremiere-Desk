@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using AP_Desk_Ferreyra.Controllers;
 using AP_Web_Ferreyra.DAOs;
 using AP_Web_Ferreyra.Models;
 using Microsoft.AspNetCore.Http;
@@ -45,10 +46,13 @@ namespace AP_Web_Ferreyra.Controllers
         }
 
         [HttpPost]
-        public IActionResult Register(string usuario, string password, int pass)
+        public IActionResult Registrar(string usuario, string password, int id_pass)
         {
 
-            UsuarioDAO.getInstancia().add(new Usuario(usuario, password, pass));
+            UsuarioDAO.getInstancia().add(new Usuario(usuario, password, id_pass));
+
+            var passControler = new PassController();
+            passControler.UsarPass(usuario);
 
             var usuarioJson = HttpContext.Session.GetString("usuario");
 

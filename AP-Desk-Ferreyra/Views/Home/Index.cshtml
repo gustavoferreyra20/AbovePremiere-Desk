@@ -7,16 +7,16 @@
     <p>Convierte, recorta y saca capturas con esta poderosa aplicación.</p>
     <p>Activa el producto para acceder a estas funciones y mucho mas!</p>
  
-    <form class="form-inline justify-content-center" asp-controller="Home" asp-action="Validar" method="post">
+    <form class="form-inline justify-content-center" asp-controller="Pass" asp-action="Validar" method="post">
         <div class="form-group mb-2">
             <input type="text" class="form-control-plaintext" placeholder="Código de producto" name="pass" id="pass"required />
         </div>
         <button type="submit" class="btn btn-primary mb-2">Validar</button>
     </form>
 
-    @if (ViewBag.msg != null)
+    @if (TempData["msg"] != null)
     {
-        <p><b>@ViewBag.msg</b></p>
+        <p><b>@TempData["msg"]</b></p>
     }
 </div>
 

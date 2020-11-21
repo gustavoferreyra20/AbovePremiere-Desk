@@ -40,26 +40,6 @@ namespace AP_Web_Ferreyra.Controllers
             return View();
         }
 
-        [HttpPost]
-        public IActionResult Validar(string pass)
-        {
-            ViewResult vista;
-
-            var claveValida = PassDAO.getInstancia().validarPase(pass);
-
-            if (claveValida != -1)
-            {
-                vista = View("Registrar");
-            }
-            else
-            {
-                ViewBag.pass = claveValida;
-                vista = View("Index");
-            }
-  
-            return vista;
-        }
-
         public IActionResult Registrar()
         {
             return View();
