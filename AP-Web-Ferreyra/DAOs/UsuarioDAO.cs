@@ -1,5 +1,6 @@
 ﻿using AP_Desk_Ferreyra;
 using AP_Web_Ferreyra.Models;
+using Microsoft.AspNetCore.Cryptography.KeyDerivation;
 using System;
 using System.Collections.Generic;
 
@@ -23,6 +24,8 @@ namespace AP_Web_Ferreyra.DAOs
 
         public void add(Usuario user)
         {
+            //var psw = hashPassword(user.password);
+
             var queryBuilder = DBConnection.getInstance().getQueryBuilder();
 
             queryBuilder.setQuery("INSERT INTO usuarios (user,pwd,id_pass) VALUES (@username,@password,@pass)");
@@ -33,13 +36,13 @@ namespace AP_Web_Ferreyra.DAOs
             DBConnection.getInstance().abm(queryBuilder);
         }
 
-        public Usuario buscarUsuario(string username, string password)
+
+        public Usuario buscarUsuario(string username)
         {
             var queryBuilder = DBConnection.getInstance().getQueryBuilder();
 
-            queryBuilder.setQuery("SELECT * FROM usuarios WHERE user=@username AND pwd=@password");
+            queryBuilder.setQuery("SELECT * FROM usuarios WHERE user=@username");
             queryBuilder.addParam("@username", username);
-            queryBuilder.addParam("@password", password);
 
             var dataReader = DBConnection.getInstance().select(queryBuilder);
             Usuario usuario = null;
@@ -68,6 +71,27 @@ namespace AP_Web_Ferreyra.DAOs
             return id_usuario;
         }
 
+        internal void editNombre(string userBase, string usuario)
+        {
+            var queryBuilder = DBConnection.getInstance().getQueryBuilder();
+
+            queryBuilder.setQuery("UPDATE usuarios SET user=@usuario WHERE user=@userBase");
+            queryBuilder.addParam("@usuario", usuario);
+            queryBuilder.addParam("@userBase", userBase);
+
+            DBConnection.getInstance().abm(queryBuilder);
+        }
+
+        internal void editPassword(string userBase, string password2)
+        {
+            var queryBuilder = DBConnection.getInstance().getQueryBuilder();
+
+            queryBuilder.setQuery("UPDATE usuarios SET psw=@password2 WHERE user=@userBase");
+            queryBuilder.addParam("@psw", password2);
+            queryBuilder.addParam("@userBase", userBase);
+
+            DBConnection.getInstance().abm(queryBuilder);
+        }
     }
 
 

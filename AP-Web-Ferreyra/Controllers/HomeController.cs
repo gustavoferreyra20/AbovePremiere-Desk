@@ -45,6 +45,25 @@ namespace AP_Web_Ferreyra.Controllers
             return View();
         }
 
+        public IActionResult Editar()
+        {
+            var usuarioJson = HttpContext.Session.GetString("usuario");
+
+            if (usuarioJson != null)
+            {
+
+                var usuario = JsonConvert.DeserializeObject<dynamic>(usuarioJson);
+
+                TempData["userBase"] = usuario;
+                return View();
+
+            }
+            else
+            {
+                return View("Index");
+            }
+        }
+
         public IActionResult Programa()
         {
 
