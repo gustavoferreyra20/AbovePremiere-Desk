@@ -54,7 +54,7 @@ namespace AP_Web_Ferreyra.Controllers
 
                 var usuario = JsonConvert.DeserializeObject<dynamic>(usuarioJson);
 
-                TempData["userBase"] = usuario;
+                ViewBag.usuario = usuario;
                 return View();
 
             }

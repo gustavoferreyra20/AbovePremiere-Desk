@@ -233,10 +233,8 @@ C:\Users\ferre\Desktop\Davinci\Plataformas de desarrollo\AP-Web-Ferreyra\AP-Web-
 C:\Users\ferre\Desktop\Davinci\Plataformas de desarrollo\AP-Web-Ferreyra\AP-Web-Ferreyra\obj\Debug\netcoreapp3.1\AP-Web-Ferreyra.TagHelpers.input.cache
 C:\Users\ferre\Desktop\Davinci\Plataformas de desarrollo\AP-Web-Ferreyra\AP-Web-Ferreyra\obj\Debug\netcoreapp3.1\AP-Web-Ferreyra.TagHelpers.output.cache
 C:\Users\ferre\Desktop\Davinci\Plataformas de desarrollo\AP-Web-Ferreyra\AP-Web-Ferreyra\obj\Debug\netcoreapp3.1\AP-Web-Ferreyra.RazorCoreGenerate.cache
-C:\Users\ferre\Desktop\Davinci\Plataformas de desarrollo\AP-Web-Ferreyra\AP-Web-Ferreyra\obj\Debug\netcoreapp3.1\Razor\Views\Home\Admin.cshtml.g.cs
 C:\Users\ferre\Desktop\Davinci\Plataformas de desarrollo\AP-Web-Ferreyra\AP-Web-Ferreyra\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\ferre\Desktop\Davinci\Plataformas de desarrollo\AP-Web-Ferreyra\AP-Web-Ferreyra\obj\Debug\netcoreapp3.1\Razor\Views\Home\IniciarSesion.cshtml.g.cs
-C:\Users\ferre\Desktop\Davinci\Plataformas de desarrollo\AP-Web-Ferreyra\AP-Web-Ferreyra\obj\Debug\netcoreapp3.1\Razor\Views\Home\Programa.cshtml.g.cs
 C:\Users\ferre\Desktop\Davinci\Plataformas de desarrollo\AP-Web-Ferreyra\AP-Web-Ferreyra\obj\Debug\netcoreapp3.1\Razor\Views\Home\Registrar.cshtml.g.cs
 C:\Users\ferre\Desktop\Davinci\Plataformas de desarrollo\AP-Web-Ferreyra\AP-Web-Ferreyra\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\ferre\Desktop\Davinci\Plataformas de desarrollo\AP-Web-Ferreyra\AP-Web-Ferreyra\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
@@ -252,4 +250,6 @@ C:\Users\ferre\Desktop\Davinci\Plataformas de desarrollo\AP-Web-Ferreyra\AP-Web-
 C:\Users\ferre\Desktop\Davinci\Plataformas de desarrollo\AP-Web-Ferreyra\AP-Web-Ferreyra\obj\Debug\netcoreapp3.1\AP-Web-Ferreyra.dll
 C:\Users\ferre\Desktop\Davinci\Plataformas de desarrollo\AP-Web-Ferreyra\AP-Web-Ferreyra\obj\Debug\netcoreapp3.1\AP-Web-Ferreyra.pdb
 C:\Users\ferre\Desktop\Davinci\Plataformas de desarrollo\AP-Web-Ferreyra\AP-Web-Ferreyra\obj\Debug\netcoreapp3.1\AP-Web-Ferreyra.genruntimeconfig.cache
+C:\Users\ferre\Desktop\Davinci\Plataformas de desarrollo\AP-Web-Ferreyra\AP-Web-Ferreyra\obj\Debug\netcoreapp3.1\Razor\Views\Home\Admin.cshtml.g.cs
 C:\Users\ferre\Desktop\Davinci\Plataformas de desarrollo\AP-Web-Ferreyra\AP-Web-Ferreyra\obj\Debug\netcoreapp3.1\Razor\Views\Home\Editar.cshtml.g.cs
+C:\Users\ferre\Desktop\Davinci\Plataformas de desarrollo\AP-Web-Ferreyra\AP-Web-Ferreyra\obj\Debug\netcoreapp3.1\Razor\Views\Home\Programa.cshtml.g.cs

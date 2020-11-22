@@ -19,6 +19,7 @@ namespace AP_Web_Ferreyra.Controllers
 
                 if (usuarioEncontrado != null)
                 {
+
                     if (Verify(password, usuarioEncontrado.password))
                     {
                         HttpContext.Session.SetString("usuario", JsonConvert.SerializeObject(usuarioEncontrado));
@@ -27,7 +28,7 @@ namespace AP_Web_Ferreyra.Controllers
                     }
                     else
                     {
-                        ViewBag.msg = "El usuario no existes";
+                        ViewBag.msg = "El usuario no existe";
                         return View("../Home/IniciarSesion");
                     }
 
@@ -83,35 +84,61 @@ namespace AP_Web_Ferreyra.Controllers
         {
             if (usuario != null)
             {
-                UsuarioDAO.getInstancia().editNombre(userBase, usuario);
+                editarNombre(userBase, usuario);
+                userBase = usuario;
             }
 
-            if (password != null && password2 != null)
+            if (password != null || password2 != null)
             {
                 editarPassword(userBase, password, password2);
             }
 
-            TempData["msg"] = usuario + " " + userBase;
-            return Redirect("../Home/Editar");
+            var usuarioJson = HttpContext.Session.GetString("usuario");
+            var usuarioNuevo = JsonConvert.DeserializeObject<dynamic>(usuarioJson);
+
+            ViewBag.usuario = usuarioNuevo;
+            return View("../Home/Editar");
         }
 
-        private string editarPassword(string userBase, string password, string password2)
+        private void editarNombre(string userBase, string usuario)
+        {
+            var usuarioExistente = UsuarioDAO.getInstancia().buscarUsuario(usuario);
+
+            if (usuarioExistente != null)
+            {
+                ViewBag.msg = "Ya existe ese usuario";
+            }
+            else
+            {
+                UsuarioDAO.getInstancia().editNombre(userBase, usuario);
+
+                var usuarioActual = UsuarioDAO.getInstancia().buscarUsuario(usuario);
+                usuarioActual.username = usuario;
+                HttpContext.Session.SetString("usuario", JsonConvert.SerializeObject(usuarioActual));
+                ViewBag.msg = "Cambio exitoso";
+            }
+
+        }
+        private void editarPassword(string usuario, string password, string password2)
         {
 
-            if(password == null && password2 == null)
+            if(password == null || password2 == null)
             {
-                return "Debe completar los campos de contraseña";
+                ViewBag.msg = "Debe completar los campos de contraseña";
             }
             else{
-                var usuarioEncontrado = UsuarioDAO.getInstancia().buscarUsuario(userBase);
+                var usuarioEncontrado = UsuarioDAO.getInstancia().buscarUsuario(usuario);
+
                 if(Verify(password, usuarioEncontrado.password))
                 {
-                    UsuarioDAO.getInstancia().editPassword(userBase, Hash(password2));
-                    return "Debe completar los campos de contraseña";
+                    UsuarioDAO.getInstancia().editPassword(usuario, Hash(password2));
+                    usuarioEncontrado.password = Hash(password2);
+                    HttpContext.Session.SetString("usuario", JsonConvert.SerializeObject(usuarioEncontrado));
+                    ViewBag.msg = "Cambio exitoso";
                 }
                 else
                 {
-                    return "Las contraseñas no coinciden";
+                    ViewBag.msg = "Las contraseñas no coinciden";
                 }
 
             }

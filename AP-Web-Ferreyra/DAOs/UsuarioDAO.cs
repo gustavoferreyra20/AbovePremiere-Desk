@@ -86,8 +86,8 @@ namespace AP_Web_Ferreyra.DAOs
         {
             var queryBuilder = DBConnection.getInstance().getQueryBuilder();
 
-            queryBuilder.setQuery("UPDATE usuarios SET psw=@password2 WHERE user=@userBase");
-            queryBuilder.addParam("@psw", password2);
+            queryBuilder.setQuery("UPDATE usuarios SET pwd=@password2 WHERE user=@userBase");
+            queryBuilder.addParam("@password2", password2);
             queryBuilder.addParam("@userBase", userBase);
 
             DBConnection.getInstance().abm(queryBuilder);
