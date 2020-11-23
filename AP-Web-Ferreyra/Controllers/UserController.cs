@@ -61,7 +61,7 @@ namespace AP_Web_Ferreyra.Controllers
                 var id_user = UsuarioDAO.getInstancia().devolverIdUsuario(usuario);
                 var passControler = new PassController();
 
-                //passControler.UsarPass(id_pass, id_user);
+                passControler.UsarPass(id_pass, id_user);
 
                 var usuarioJson = HttpContext.Session.GetString("usuario");
 
@@ -174,6 +174,30 @@ namespace AP_Web_Ferreyra.Controllers
                 return View("../Home/Editar");
             }
 
+        }
+
+        [HttpPost]
+        public JsonResult BuscarUsuarioRegistrado([FromBody] JsonUsuario jsonUsuario)
+        {
+
+            // Busco usuario en DAO
+            Usuario usuario = UsuarioDAO.getInstancia().buscarUsuario(jsonUsuario.username);
+
+            var jsonResult = "";
+            if (Verify(jsonUsuario.pwd, usuario.password))
+            {
+                jsonResult = JsonConvert.SerializeObject(usuario);
+            }
+
+            return Json(jsonResult);
+
+        }
+
+        public class JsonUsuario
+        {
+            public string pwd { get; set; }
+
+            public string username { get; set; }
         }
 
         private string Hash(string password)
