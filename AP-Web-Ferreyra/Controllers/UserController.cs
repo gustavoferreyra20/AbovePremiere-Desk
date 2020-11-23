@@ -184,11 +184,13 @@ namespace AP_Web_Ferreyra.Controllers
             Usuario usuario = UsuarioDAO.getInstancia().buscarUsuario(jsonUsuario.username);
 
             var jsonResult = "";
-            if (Verify(jsonUsuario.pwd, usuario.password))
+            if (usuario != null)
             {
-                jsonResult = JsonConvert.SerializeObject(usuario);
+                if (Verify(jsonUsuario.pwd, usuario.password))
+                {
+                    jsonResult = JsonConvert.SerializeObject(usuario);
+                }
             }
-
             return Json(jsonResult);
 
         }
