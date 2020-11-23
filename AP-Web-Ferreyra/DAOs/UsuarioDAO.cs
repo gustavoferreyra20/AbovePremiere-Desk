@@ -92,6 +92,16 @@ namespace AP_Web_Ferreyra.DAOs
 
             DBConnection.getInstance().abm(queryBuilder);
         }
+
+        internal void Eliminar(string username)
+        {
+            var queryBuilder = DBConnection.getInstance().getQueryBuilder();
+
+            queryBuilder.setQuery("DELETE FROM usuarios WHERE user=@username");
+            queryBuilder.addParam("@username", username);
+
+            DBConnection.getInstance().abm(queryBuilder);
+        }
     }
 
 

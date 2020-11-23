@@ -27,7 +27,6 @@
                                placeholder="**********" value="">
                     </div>
                 
-                        <input type="hidden" id="userBase" name="userBase" value=@ViewBag.usuario.username runat="server" />
                     <button type="submit" class="btn btn-block btn-primary">Editar</button>
 
                     @if (ViewBag.msg != null)
@@ -37,7 +36,7 @@
                     
                 </form>
                 </div>
-                <form asp-controller="User" asp-action="Editar" method="post">
+                <form asp-controller="User" asp-action="Eliminar" method="post">
                     <div class="form-group">
                         <button type="submit" class="btn btn-sm btn-danger">Eliminar Usuario</button>
                     </div>

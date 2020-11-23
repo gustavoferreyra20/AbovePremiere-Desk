@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewData["Title"] = "Eliminar";
+}
+
+<div class="row justify-content-center">
+    <div class="col-12 col-lg-4">
+        <div class="card p-3 bloque">
+            <div class="card-body ">
+                <form asp-controller="User" asp-action="ConfirmarEliminar" method="post">
+                    <h1 class="text-center pb-4" id="white">Eliminar</h1>
+
+                    <p>De seguro quiere eliminar su cuenta?</p>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-block btn-danger" name="confirmacion" id="confirmacion" value=True>Eliminar Usuario</button>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-block btn-primary" name="confirmacion" id="confirmacion" value=False>Volver</button>
+                    </div>
+
+                    @if (ViewBag.msg != null)
+                    {
+                        <p><b>@ViewBag.msg</b></p>
+                    }
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

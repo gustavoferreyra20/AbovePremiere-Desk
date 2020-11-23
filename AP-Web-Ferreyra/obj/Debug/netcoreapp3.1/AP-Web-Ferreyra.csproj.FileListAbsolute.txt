@@ -253,3 +253,4 @@ C:\Users\ferre\Desktop\Davinci\Plataformas de desarrollo\AP-Web-Ferreyra\AP-Web-
 C:\Users\ferre\Desktop\Davinci\Plataformas de desarrollo\AP-Web-Ferreyra\AP-Web-Ferreyra\obj\Debug\netcoreapp3.1\Razor\Views\Home\Admin.cshtml.g.cs
 C:\Users\ferre\Desktop\Davinci\Plataformas de desarrollo\AP-Web-Ferreyra\AP-Web-Ferreyra\obj\Debug\netcoreapp3.1\Razor\Views\Home\Editar.cshtml.g.cs
 C:\Users\ferre\Desktop\Davinci\Plataformas de desarrollo\AP-Web-Ferreyra\AP-Web-Ferreyra\obj\Debug\netcoreapp3.1\Razor\Views\Home\Programa.cshtml.g.cs
+C:\Users\ferre\Desktop\Davinci\Plataformas de desarrollo\AP-Web-Ferreyra\AP-Web-Ferreyra\obj\Debug\netcoreapp3.1\Razor\Views\Home\Eliminar.cshtml.g.cs

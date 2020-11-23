@@ -28,7 +28,7 @@ namespace AP_Web_Ferreyra.Controllers
                     }
                     else
                     {
-                        ViewBag.msg = "El usuario no existe";
+                        ViewBag.msg = "Contraseña incorrecta";
                         return View("../Home/IniciarSesion");
                     }
 
@@ -80,17 +80,21 @@ namespace AP_Web_Ferreyra.Controllers
         }
 
         [HttpPost]
-        public IActionResult Editar(string userBase, string usuario, string password, string password2)
+        public IActionResult Editar(string usuario, string password, string password2)
         {
+            var userBaseJson = HttpContext.Session.GetString("usuario");
+            var userBase = JsonConvert.DeserializeObject<dynamic>(userBaseJson);
+
+            string usernameBase = userBase.username;
             if (usuario != null)
             {
-                editarNombre(userBase, usuario);
-                userBase = usuario;
+                editarNombre(usernameBase, usuario);
+                usernameBase = usuario;
             }
 
             if (password != null || password2 != null)
             {
-                editarPassword(userBase, password, password2);
+                editarPassword(usernameBase, password, password2);
             }
 
             var usuarioJson = HttpContext.Session.GetString("usuario");
@@ -142,6 +146,34 @@ namespace AP_Web_Ferreyra.Controllers
                 }
 
             }
+        }
+
+        public IActionResult Eliminar()
+        {
+            var usuarioJson = HttpContext.Session.GetString("usuario");
+            var usuario = JsonConvert.DeserializeObject<dynamic>(usuarioJson);
+
+            ViewBag.usuario = usuario;
+            return View("../Home/Eliminar");
+        }
+
+        [HttpPost]
+        public IActionResult ConfirmarEliminar(Boolean confirmacion)
+        {
+            var usuarioJson = HttpContext.Session.GetString("usuario");
+            var usuario = JsonConvert.DeserializeObject<dynamic>(usuarioJson);
+
+            if (confirmacion)
+            {
+                UsuarioDAO.getInstancia().Eliminar((string)usuario.username);
+                return Logout();
+            }
+            else
+            {
+                ViewBag.usuario = usuario;
+                return View("../Home/Editar");
+            }
+
         }
 
         private string Hash(string password)
