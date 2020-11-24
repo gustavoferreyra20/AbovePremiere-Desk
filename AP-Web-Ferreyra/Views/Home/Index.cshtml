@@ -14,9 +14,9 @@
         <button type="submit" class="btn btn-primary mb-2">Validar</button>
     </form>
 
-    @if (TempData["msg"] != null)
+    @if (ViewBag.msg != null)
     {
-        <p><b>@TempData["msg"]</b></p>
+        <p><b>@ViewBag.msg</b></p>
     }
 </div>
 

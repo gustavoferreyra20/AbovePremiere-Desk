@@ -23,8 +23,8 @@ namespace AP_Web_Ferreyra.Controllers
                     if (Verify(password, usuarioEncontrado.password))
                     {
                         HttpContext.Session.SetString("usuario", JsonConvert.SerializeObject(usuarioEncontrado));
-
-                        return Redirect("/Home/Programa");
+                        ViewBag.usuario = usuarioEncontrado;
+                        return View("../Home/Programa");
                     }
                     else
                     {
@@ -67,15 +67,15 @@ namespace AP_Web_Ferreyra.Controllers
 
                 if (usuarioJson == null)
                 {
-                    Login(usuario, password);
+                    return Login(usuario, password);
                 }
 
-                return Redirect("/Home/Index");
+                return View("../Home/Index");
             }else
             {
-                TempData["id_pass"] = id_pass;
-                TempData["msg"] = "Ya existe ese usuario";
-                return Redirect("../Home/Registrar");
+                ViewBag.idPass = id_pass;
+                ViewBag.msg = "Ya existe ese usuario";
+                return View("../Home/Registrar");
             }
         }
 
@@ -88,13 +88,13 @@ namespace AP_Web_Ferreyra.Controllers
             string usernameBase = userBase.username;
             if (usuario != null)
             {
-                editarNombre(usernameBase, usuario);
+                EditarNombre(usernameBase, usuario);
                 usernameBase = usuario;
             }
 
             if (password != null || password2 != null)
             {
-                editarPassword(usernameBase, password, password2);
+                EditarPassword(usernameBase, password, password2);
             }
 
             var usuarioJson = HttpContext.Session.GetString("usuario");
@@ -104,7 +104,7 @@ namespace AP_Web_Ferreyra.Controllers
             return View("../Home/Editar");
         }
 
-        private void editarNombre(string userBase, string usuario)
+        private void EditarNombre(string userBase, string usuario)
         {
             var usuarioExistente = UsuarioDAO.getInstancia().buscarUsuario(usuario);
 
@@ -123,7 +123,7 @@ namespace AP_Web_Ferreyra.Controllers
             }
 
         }
-        private void editarPassword(string usuario, string password, string password2)
+        private void EditarPassword(string usuario, string password, string password2)
         {
 
             if(password == null || password2 == null)
@@ -166,6 +166,8 @@ namespace AP_Web_Ferreyra.Controllers
             if (confirmacion)
             {
                 UsuarioDAO.getInstancia().Eliminar((string)usuario.username);
+                var passControler = new PassController();
+                passControler.EliminarPass((int)usuario.pass);
                 return Logout();
             }
             else

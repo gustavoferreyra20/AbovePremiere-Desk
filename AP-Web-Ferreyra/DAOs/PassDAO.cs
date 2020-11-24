@@ -10,7 +10,7 @@ namespace AP_Desk_Ferreyra.DAOs
     {
         public static PassDAO instancia = null;
 
-        public static PassDAO getInstancia()
+        public static PassDAO GetInstancia()
         {
 
             if (instancia == null)
@@ -22,7 +22,7 @@ namespace AP_Desk_Ferreyra.DAOs
 
         }
 
-        public int validarPase(string pass)
+        public int ValidarPase(string pass)
         {
             var queryBuilder = DBConnection.getInstance().getQueryBuilder();
 
@@ -39,12 +39,32 @@ namespace AP_Desk_Ferreyra.DAOs
             return id_pase;
         }
 
-        public void usarPass(int id_pass, int id_user)
+        public void UsarPass(int id_pass, int id_user)
         {
             var queryBuilder = DBConnection.getInstance().getQueryBuilder();
 
             queryBuilder.setQuery("UPDATE pases SET id_user=@id_user WHERE id=@id_pass");
             queryBuilder.addParam("@id_user", id_user);
+            queryBuilder.addParam("@id_pass", id_pass);
+
+            DBConnection.getInstance().abm(queryBuilder);
+        }
+
+        internal void GuardarPase(string pass)
+        {
+            var queryBuilder = DBConnection.getInstance().getQueryBuilder();
+
+            queryBuilder.setQuery("INSERT INTO pases (pass) VALUES (@pass)");
+            queryBuilder.addParam("@pass", pass);
+
+            DBConnection.getInstance().abm(queryBuilder);
+        }
+
+        internal void Eliminar(int id_pass)
+        {
+            var queryBuilder = DBConnection.getInstance().getQueryBuilder();
+
+            queryBuilder.setQuery("DELETE FROM pases WHERE id=@id_pass");
             queryBuilder.addParam("@id_pass", id_pass);
 
             DBConnection.getInstance().abm(queryBuilder);

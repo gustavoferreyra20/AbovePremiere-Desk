@@ -24,12 +24,11 @@ namespace AP_Web_Ferreyra.DAOs
 
         public void add(Usuario user)
         {
-            //var psw = hashPassword(user.password);
-
             var queryBuilder = DBConnection.getInstance().getQueryBuilder();
 
-            queryBuilder.setQuery("INSERT INTO usuarios (user,pwd,id_pass) VALUES (@username,@password,@pass)");
+            queryBuilder.setQuery("INSERT INTO usuarios (user,permisos,pwd,id_pass) VALUES (@username,@permisos,@password,@pass)");
             queryBuilder.addParam("@username", user.username);
+            queryBuilder.addParam("@permisos", user.permisos);
             queryBuilder.addParam("@password", user.password);
             queryBuilder.addParam("@pass", user.pass);
 
@@ -48,7 +47,8 @@ namespace AP_Web_Ferreyra.DAOs
             Usuario usuario = null;
             while (dataReader.Read())
             {
-                usuario = new Usuario(dataReader.GetString(1), dataReader.GetString(2), dataReader.GetInt32(3));
+                usuario = new Usuario(dataReader.GetString(1), dataReader.GetString(3), dataReader.GetInt32(4));
+                usuario.permisos = dataReader.GetString(2);
             }
 
             return usuario;

@@ -21,13 +21,13 @@
                                placeholder="**********" value="" required>
                     </div>
 
-                    <input type="hidden" id="id_pass" name="id_pass" value=@TempData["id_pass"] runat="server" />
+                    <input type="hidden" id="id_pass" name="id_pass" value=@ViewBag.idPass runat="server" />
                     <button type="submit" class="btn btn-block btn-primary">Registrar</button>
 
                 </form>
-                @if (TempData["msg"] != null)
+                @if (ViewBag.msg != null)
                 {
-                    <p><b>@TempData["msg"]</b></p>
+                    <p><b>@ViewBag.msg</b></p>
                 }
             </div>
         </div>

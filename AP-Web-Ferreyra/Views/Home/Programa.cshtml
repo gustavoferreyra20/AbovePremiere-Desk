@@ -3,8 +3,41 @@
     ViewData["Title"] = "Programa";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Programa</h1>
-    <button class="btn btn-primary mb-2">Descargar ejecutable</button>
-</div>
+@if (ViewBag.usuario.permisos == "admin")
+{
+    <div class="row justify-content-center">
+        <div class="col-12 col-lg-4">
+            <div class="card p-3 bloque">
+                <div class="card-body ">
+                    <form asp-controller="Pass" asp-action="Agregar" method="post">
+                        <h1 class="text-center pb-4" id="white">Generar Keys</h1>
 
+                        <div class="form-group">
+                            <label for="exampleSelect1">Cantidad</label>
+                            <select class="form-control" name="cantidad" id="cantidad">
+                                <option>10</option>
+                                <option>20</option>
+                                <option>50</option>
+                                <option>100</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-block btn-primary">Generar</button>
+                        </div>
+                    </form>
+                    @if (ViewBag.msg != null)
+                    {
+                        <p><b>@ViewBag.msg</b></p>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <div class="text-center">
+        <h1 class="display-4">Gracias por adquirir nuestro producto</h1>
+    </div>
+}
