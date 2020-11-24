@@ -39,7 +39,7 @@ namespace AP_Desk_Ferreyra.Controllers
             var passInstacia = PassDAO.GetInstancia();
             for (int i = 0; i <= cantidad; i++)
             {
-                var nuevaKey = GenerarNuevaKey(20);
+                var nuevaKey = GenerarNuevaKey();
                 var claveValida = passInstacia.ValidarPase(nuevaKey);
 
                 if(claveValida != -1)
@@ -59,12 +59,19 @@ namespace AP_Desk_Ferreyra.Controllers
             return View("../Home/Programa");
         }
 
-        private string GenerarNuevaKey(int length)
+        private string GenerarNuevaKey()
         {
             Random random = new Random();
-            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-            return new string(Enumerable.Repeat(chars, length)
+            const string letras = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            const string numeros = "0123456789";
+            const int length = 4;
+
+            var pass = new string(Enumerable.Repeat(letras, length)
+              .Select(s => s[random.Next(s.Length)]).ToArray()) + new string(Enumerable.Repeat(letras, length)
+              .Select(s => s[random.Next(s.Length)]).ToArray()) + new string(Enumerable.Repeat(numeros, length)
+              .Select(s => s[random.Next(s.Length)]).ToArray()) + new string(Enumerable.Repeat(numeros, length)
               .Select(s => s[random.Next(s.Length)]).ToArray());
+            return pass;
         }
 
         internal void EliminarPass(int id_pass)
