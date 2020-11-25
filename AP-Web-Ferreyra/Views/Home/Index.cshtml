@@ -4,12 +4,12 @@
 
 <div class="text-center">
     <h1 class="display-4">Bienvenido</h1>
-    <p>Convierte, recorta y saca capturas con esta poderosa aplicación.</p>
+    <p>Convierte, mutea y saca capturas con esta poderosa aplicación.</p>
     <p>Activa el producto para acceder a estas funciones y mucho mas!</p>
- 
+
     <form class="form-inline justify-content-center" asp-controller="Pass" asp-action="Validar" method="post">
         <div class="form-group mb-2">
-            <input type="text" class="form-control-plaintext" placeholder="Código de producto" name="pass" id="pass"required />
+            <input type="text" class="form-control-plaintext" placeholder="Código de producto" name="pass" id="pass" required />
         </div>
         <button type="submit" class="btn btn-primary mb-2">Validar</button>
     </form>
@@ -18,5 +18,41 @@
     {
         <p><b>@ViewBag.msg</b></p>
     }
+</div>
+
+<div class="card-deck">
+    <div class="card">
+        <img class="card-img-top" src="~/img/convertir.png" alt="convertir">
+        <div class="card-body">
+            <h5 class="card-title">Convierte</h5>
+            <p class="card-text">No puedes reproducir cierto formato? No te preocupes mas y cámbialo al que mas te convenga.</p>
+
+        </div>
+    </div>
+    <div class="card">
+        <img class="card-img-top"
+             src="~/img/resolucion.png" alt="resolucion">
+        <div class="card-body">
+            <h5 class="card-title">Cambia de resolución</h5>
+            <p class="card-text">Ahorra espacio y mantiene los videos reduciendo su reloución, o reescala su resolución aumentándola.</p>
+        </div>
+    </div>
+</div>
+
+<div class="card-deck">
+    <div class="card">
+        <img class="card-img-top" src="~/img/capturas.png" alt="capturas">
+        <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Si quieres disfrutar mejor una escena decide cuantas captulas por segundo quieres sacar.</p>
+        </div>
+    </div>
+    <div class="card">
+        <img class="card-img-top" src="~/img/audio.png" alt="audio">
+        <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Convierte a mp3 el audio de un video para disfrutar solamente su sonido, o mutealo si tiene un ruido molesto.</p>
+        </div>
+    </div>
 </div>
 
